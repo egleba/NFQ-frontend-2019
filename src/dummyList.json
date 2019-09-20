@@ -1,0 +1,14 @@
+[
+{"number":101,"specialistAssigned":"Specialistas 3","status": "waiting"},
+{"number":102,"specialistAssigned":"Specialistas 1","status": "waiting"},
+{"number":103,"specialistAssigned":"Specialistas 1","status": "waiting"},
+{"number":104,"specialistAssigned":"Specialistas 3","status": "waiting"},
+{"number":105,"specialistAssigned":"Specialistas 1","status": "waiting"},
+{"number":106,"specialistAssigned":"Specialistas 2","status": "waiting"},
+{"number":107,"specialistAssigned":"Specialistas 3","status": "waiting"},
+{"number":108,"specialistAssigned":"Specialistas 1","status": "waiting"},
+{"number":109,"specialistAssigned":"Specialistas 1","status": "waiting"},
+{"number":110,"specialistAssigned":"Specialistas 3","status": "waiting"},
+{"number":111,"specialistAssigned":"Specialistas 1","status": "waiting"},
+{"number":112,"specialistAssigned":"Specialistas 1","status": "waiting"}
+]

@@ -1,0 +1,43 @@
+.display {
+  width: 70%;
+}
+
+.display__item {
+  list-style: none;
+  text-align: center;
+  display: flex;
+}
+
+.display__specialist {
+  background-color: $white;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 10px;
+  width: 60%;
+}
+
+.display__specialist--active {
+  background-color: $green;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 10px;
+  width: 60%;
+}
+
+.display__number {
+  background-color: $white;
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
+}
+
+.display__number--active {
+  background-color: $green;
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
+}

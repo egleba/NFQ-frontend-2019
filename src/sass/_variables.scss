@@ -1,0 +1,13 @@
+$blue: #2C59F4;
+$lightBlue: #5077FF;
+$yellow: #F7C217;
+$white: #FFFFFF;
+$green: #22CE97;
+$violet: #A351CA;
+
+
+@mixin for-phone-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}

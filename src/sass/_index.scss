@@ -1,0 +1,58 @@
+.section__index {
+  padding-top: 90px;
+}
+
+.button--refresh {
+  &:after {
+    content: "Pradėti su pavyzdiniais duomenimis";
+    margin-left: 15px;
+  }
+}
+
+.button--side {
+  &:after {
+    content: "";
+    margin: 0;
+  }
+  transform: scale(0.9);
+  position: absolute;
+  top: 90px;
+  right: 30px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.form__intro {
+  color: $white;
+}
+
+.form {
+  background-color: $white;
+  padding: 30px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.form__option {
+  padding: 7px 0;
+}
+
+.form__label {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.button--add {
+  background-color: $blue;
+  margin-top: 30px;
+  color: $white;
+
+  &:hover {
+    background-color: $yellow;
+    color: $blue;
+  }
+}
