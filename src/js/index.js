@@ -11,28 +11,29 @@ let clientNumber;
 let buttonRefresh = document.querySelector("#buttonRefresh");
 let add = document.querySelector(".form__wrapper");
 let form = document.querySelector("form");
+let alertBoxes = document.querySelector(".alert-boxes");
+let alertBox = document.querySelector(".alert-box");
 
-let serviced1;
-let serviced2;
-let serviced3;
+let serviced;
 
 let spec1 = "Specialistas 1";
 let spec2 = "Specialistas 2";
 let spec3 = "Specialistas 3";
-
 
 checkForLocalStorage();
 
 
 // -------- change status of first client to "serviced" -------- //
 function findServiced(specialist) {
-  let filtered1 = list.filter(clients => clients.specialistAssigned == specialist);
-  let filteredServiced = filtered1.find(clients => clients.status == "serviced");
+  let filtered = list.filter(clients => clients.specialistAssigned == specialist);
+  let filteredServiced = filtered.find(clients => clients.status == "serviced");
   if (!filteredServiced) {
-    serviced1 = filtered1.find(clients => clients.status == "waiting");
+    serviced = filtered.find(clients => clients.status == "waiting");
   }
-  if (serviced1) {
-    serviced1.status = "serviced";
+  if (serviced) {
+    serviced.status = "serviced";
+    let startTime = new Date();
+    serviced.timeServiced = startTime;
   }
 };
 
@@ -43,7 +44,6 @@ function checkForLocalStorage() {
     clientNumber = (list[list.length - 1].number) + 1;
     buttonRefresh.classList.add("button--side");
     add.classList.remove("hidden");
-    console.log(list);
   }
   if (!localStorage.list) {
     buttonRefresh.classList.remove("button--side");
@@ -56,7 +56,7 @@ buttonRefresh.addEventListener("click", function() {
 
   let xhr = new XMLHttpRequest;
   xhr.open('GET', '../../dummyList.json', true)
-  // xhr.open('GET', 'http://egleba.lt/test/dummyList.json', true)
+  // xhr.open('GET', 'http://egleba.lt/nfq/dummyList.json', true)
 
   xhr.onload = function() {
     if (this.status === 200) {
@@ -66,12 +66,13 @@ buttonRefresh.addEventListener("click", function() {
       buttonRefresh.classList.add("button--side");
       add.classList.remove("hidden");
       findServicedAll();
+      alert("Pavyzdiniai duomenys sėkmingai įkrauti");
     } else {
       alert("Nepavyko nuskaityti lankytojų duomenų");
     }
   }
   xhr.send();
-  alert("Pavyzdiniai duomenys sėkmingai įkrauti");
+
 });
 
 
@@ -100,17 +101,26 @@ form.addEventListener("submit", function(event) {
   addedClient = {
     "number": clientNumber,
     "specialistAssigned": output,
-    "status": "waiting"
+    "status": "waiting",
+    "timeServiced": 0
   };
   list.push(addedClient);
-  clientNumber = clientNumber + 1;
 
-  findServiced(spec1);
-  findServiced(spec2);
-  findServiced(spec3);
+  findServicedAll();
 
   localStorage.setItem('list', JSON.stringify(list));
-  alert("Užregistruota sėkmingai!");
-
+  alert(`Lankytojas numeris ${clientNumber} užregistruotas sėkmingai!`);
   event.preventDefault();
 }, false);
+
+
+// -------- alert -------- //
+function alert(anyText) {
+  let div = document.createElement("div");
+  div.classList.add("alert-box");
+  div.innerHTML = anyText;
+  alertBoxes.appendChild(div);
+  setTimeout(function() {
+    alertBoxes.removeChild(div);
+  }, 1950);
+};

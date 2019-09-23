@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NFQ frontend</title>
   <meta name="description" content="NFQ 2019 rudens stojimo užduotis FRONTEND" />
-  <meta name="keywords" content="NFQ, Egle, Baltusnikiene, front-end, developer, web development localStorage, javascript" />
+  <meta name="keywords" content="NFQ, Egle, Baltusnikiene, front-end, developer, web development localStorage, html, css, javascript" />
   <meta name="author" content="Eglė" />
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="shortcut icon" href="">
@@ -20,39 +20,44 @@
       <li class="nav__link nav__link--active"><a class="nav__info" href="index.html">Administravimas</a></li>
       <li class="nav__link"><a class="nav__info" href="display.html">Švieslentė</a></li>
       <li class="nav__link"><a class="nav__info" href="specialist.html">Specialistas</a></li>
+      <li class="nav__link"><a class="nav__info" href="client.html">Lankytojas</a></li>
     </ul>
   </nav>
+
   <main class="main">
 
-    <section class="section section__index">
+    <section class="section">
       <button id="buttonRefresh" class="button button--refresh">
         <i class="icon-refresh"></i>
       </button>
 
 
       <div class="form__wrapper">
-        <p class="form__intro">Pasirinkite specialistą ir pridėkite naują klientą:</p>
+        <p class="form__intro">Pasirinkite specialistą ir pridėkite naują lankytoją:</p>
 
         <form class="form" id="focus">
           <div class="form__option">
             <input type="radio" class="radio" name="radio" value="Specialistas 1" checked="checked">
             <label class="form__label" for="Specialistas 1">Specialistas 1</label>
           </div>
-          <div class="form__option">
 
+          <div class="form__option">
             <input type="radio" class="radio" name="radio" value="Specialistas 2">
             <label class="form__label" for="Specialistas 2">Specialistas 2</label>
           </div>
-          <div class="form__option">
 
+          <div class="form__option">
             <input type="radio" class="radio" name="radio" value="Specialistas 3">
             <label class="form__label" for="Specialistas 3">Specialistas 3</label>
           </div>
 
-          <button class="button button--add" type="submit">Pridėti naują klientą</button>
+          <button class="button button--add" type="submit">Pridėti naują lankytoją</button>
       </div>
       </form>
       </div>
+      <div class="alert-boxes">
+      </div>
+
     </section>
   </main>
 

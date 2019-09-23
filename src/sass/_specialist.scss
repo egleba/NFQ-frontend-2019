@@ -32,6 +32,9 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 30px;
+  @include for-phone-only {
+    padding: 10px 10px 10px 20px;
+}
 }
 
 .filtered-by-specialist__number {
@@ -41,7 +44,7 @@
   font-weight: bold;
 
   &:before {
-    content: "Kliento Nr. ";
+    content: "Lankytojo Nr. ";
     font-weight: normal;
   }
 }
@@ -53,6 +56,9 @@
     content: "Aptarnauta";
     color: $white;
   }
+  @include for-phone-only {
+    padding: 20px;
+}
 }
 
 .button--active {

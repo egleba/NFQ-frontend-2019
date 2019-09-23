@@ -1,5 +1,3 @@
-// window.localStorage.clear();
-
 // -------- variables -------- //
 let list;
 let clientNumber;
@@ -9,6 +7,7 @@ let buttonSpecialist = document.querySelectorAll(".button--specialist");
 let specialistInfo = document.querySelector(".specialist__info");
 let filteredBySpecialist = document.querySelector(".filtered-by-specialist");
 
+let doneButtons = [];
 
 checkForLocalStorage();
 
@@ -19,7 +18,6 @@ function checkForLocalStorage() {
     list = JSON.parse(localStorage.getItem('list'));
     clientNumber = (list[list.length - 1].number) + 1;
   }
-  console.log(list);
 };
 
 
@@ -42,11 +40,11 @@ for (let i = 0; i < buttonSpecialist.length; i++)(function(i) {
 
       if (filteredBySpecialist.innerHTML.length == 0) {
         specialistInfo.classList.remove("hidden");
-        specialistInfo.innerHTML = "Klientų eilėje nėra.";
+        specialistInfo.innerHTML = "Lankytojų eilėje nėra.";
       }
     } else {
       specialistInfo.classList.remove("hidden");
-      specialistInfo.innerHTML = "Klientų eilėje nėra.";
+      specialistInfo.innerHTML = "Lankytojų eilėje nėra.";
     }
   }
 })(i);
@@ -54,6 +52,7 @@ for (let i = 0; i < buttonSpecialist.length; i++)(function(i) {
 
 // -------- display client list -------- //
 function renderHTML(stuff) {
+  doneButtons = [];
   for (let k = 0; k < stuff.length; k++) {
     let ul = document.createElement("ul");
     let li = document.createElement("li");
@@ -62,18 +61,38 @@ function renderHTML(stuff) {
     li.classList.add("filtered-by-specialist__number");
     button.classList.add("button");
     button.classList.add("button--filtered-by-specialist");
+    button.classList.add("hidden");
 
     filteredBySpecialist.appendChild(ul);
     li.innerHTML = stuff[k].number;
     ul.appendChild(li);
     ul.appendChild(button);
+    doneButtons.push(button);
+    console.log(doneButtons);
+
+    for (let j = 0; j < doneButtons.length; j++) {
+      doneButtons[0].classList.remove("hidden");
+    }
+
 
     button.addEventListener("click", function() {
       statusDone(stuff[k]);
+      if (stuff[k + 1]) {
+        statusServiced(stuff[k + 1]);
+        let startTime = new Date();
+        stuff[k + 1].timeServiced = startTime;
+        console.log(startTime);
+        localStorage.setItem('list', JSON.stringify(list));
+      }
+
       this.parentNode.remove(this);
+      doneButtons.shift(doneButtons[0]);
+      if (doneButtons.length > 0) {
+        doneButtons[0].classList.remove("hidden");
+      }
 
       if (filteredBySpecialist.innerHTML.length === 0) {
-        specialistInfo.innerHTML = "Klientų eilėje nėra.";
+        specialistInfo.innerHTML = "Lankytojų eilėje nėra.";
         specialistInfo.classList.remove("hidden");
       }
     });
@@ -89,13 +108,32 @@ function clearOtherSpecialists() {
 
 // -------- update client list from localStorage -------- //
 function getList() {
-    list = JSON.parse(localStorage.getItem('list'));
-    clientNumber = (list[list.length - 1].number) + 1;
+  list = JSON.parse(localStorage.getItem('list'));
+  clientNumber = (list[list.length - 1].number) + 1;
 };
 
 
 // -------- set status "done" -------- //
 function statusDone(that) {
   that.status = "done";
+  if (that.timeServiced != 0) {
+    let startTime = Date.parse(that.timeServiced);
+    console.log(startTime);
+    let endTime = new Date();
+    console.log(endTime);
+
+    let timeDiff = endTime - startTime;
+    timeDiff /= 1000;
+
+    let seconds = Math.round(timeDiff);
+    console.log(seconds + " seconds");
+    that.timeServiced = seconds;
+  }
   localStorage.setItem('list', JSON.stringify(list));
+};
+
+
+// -------- set status "serviced" -------- //
+function statusServiced(that) {
+  that.status = "serviced";
 };

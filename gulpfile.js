@@ -13,13 +13,15 @@ const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
 
 
-var jsSRC = "index.js";
-var jsSRC1 = "display.js";
-var jsSRC2 = "specialist.js";
+var jsSRC1 = "index.js";
+var jsSRC2 = "display.js";
+var jsSRC3 = "specialist.js";
+var jsSRC4 = "client.js";
+
 
 
 var jsFolder = "src/js/";
-var jsFILES = [jsSRC, jsSRC1, jsSRC2];
+var jsFILES = [jsSRC1, jsSRC2, jsSRC3, jsSRC4];
 
 // Logs Message
 gulp.task('message', function(done) {
