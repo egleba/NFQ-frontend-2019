@@ -60,5 +60,5 @@ To start browser syncing and file watching, run `gulp` in the project directory.
 * Eglė Baltušnikienė
 * egle.baltusnikiene@gmail.com
 * [LinkedIn](https://www.linkedin.com/in/egl%C4%97-baltu%C5%A1nikien%C4%97-22368b60/)
-* [codepen.io/egleba](https://codepen.io/egleba/)
+* [Codepen](https://codepen.io/egleba/)
 * [egleba.lt](http://egleba.lt/)
