@@ -1,0 +1,42 @@
+.client__info {
+  color: $white;
+  width: 70%;
+  text-align: center;
+}
+
+.client__number {
+  color: $blue;
+  margin: 20px 0;
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 7px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: 97% center;
+  background-size: 15px;
+  background-color: $white;
+  // sorting icon from fontawesome.com https://fontawesome.com/license
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='sort' class='svg-inline--fa fa-sort fa-w-10' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%232C59F4' d='M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.client__waiting {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.client__text {
+  text-align: center;
+  color: $blue;
+}
+
+.client__time {
+  color: $blue;
+  text-align: center;
+}
