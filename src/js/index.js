@@ -111,7 +111,7 @@ form.addEventListener("submit", function(event) {
   findServicedAll();
 
   localStorage.setItem('list', JSON.stringify(list));
-  alert(`Lankytojas numeris ${clientNumber} užregistruotas sėkmingai!`);
+  alert(`Lankytojas numeris ${clientNumber - 1} užregistruotas sėkmingai!`);
   event.preventDefault();
 }, false);
 
