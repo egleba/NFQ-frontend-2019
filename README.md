@@ -4,7 +4,12 @@ NFQ 2019 autumn entry task FRONTEND *(NFQ 2019 rudens stojimo užduotis FRONTEND
 
 Customer queue administration and display project.
 
-This is a **master** branch for GitHub URL.
+==============================================
+
+* You are in a **master** branch for GitHub URL.
+* All the source files are in **work** branch.
+
+==============================================
 
 
 ## Project Overview
