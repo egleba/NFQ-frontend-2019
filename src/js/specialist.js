@@ -68,7 +68,6 @@ function renderHTML(stuff) {
     ul.appendChild(li);
     ul.appendChild(button);
     doneButtons.push(button);
-    console.log(doneButtons);
 
     for (let j = 0; j < doneButtons.length; j++) {
       doneButtons[0].classList.remove("hidden");
@@ -81,7 +80,6 @@ function renderHTML(stuff) {
         statusServiced(stuff[k + 1]);
         let startTime = new Date();
         stuff[k + 1].timeServiced = startTime;
-        console.log(startTime);
         localStorage.setItem('list', JSON.stringify(list));
       }
 
@@ -118,15 +116,12 @@ function statusDone(that) {
   that.status = "done";
   if (that.timeServiced != 0) {
     let startTime = Date.parse(that.timeServiced);
-    console.log(startTime);
     let endTime = new Date();
-    console.log(endTime);
 
     let timeDiff = endTime - startTime;
     timeDiff /= 1000;
 
     let seconds = Math.round(timeDiff);
-    console.log(seconds + " seconds");
     that.timeServiced = seconds;
   }
   localStorage.setItem('list', JSON.stringify(list));

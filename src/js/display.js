@@ -130,7 +130,6 @@ function getList() {
 
 function checkIfDisplayEmpty() {
   if (display.innerHTML == 0) {
-    console.log(display);
     display.innerHTML = "Lankytojų nėra.";
   }
 }
