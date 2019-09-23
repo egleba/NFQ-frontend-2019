@@ -1,0 +1,42 @@
+@keyframes alert {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+}
+
+.alert-boxes {
+  position: absolute;
+  bottom: 20px;
+  width: auto;
+  height: auto;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.alert-box {
+  background-color: $lightBlue;
+  width: 150px;
+  margin-top: 10px;
+  animation: alert 2s ease-in-out;
+  padding: 10px;
+  border-radius: 7px;
+  color: $white;
+}
+
+.alert-box--show {
+  animation: alert 2s ease-in-out;
+}
