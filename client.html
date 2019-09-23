@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NFQ frontend</title>
+  <meta name="description" content="NFQ 2019 rudens stojimo užduotis FRONTEND" />
+  <meta name="keywords" content="NFQ, Egle, Baltusnikiene, front-end, developer, web development localStorage, html, css, javascript" />
+  <meta name="author" content="Eglė" />
+  <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="nav">
+    <ul class="nav__wrapper">
+      <li class="nav__link"><a class="nav__info" href="index.html">Administravimas</a></li>
+      <li class="nav__link"><a class="nav__info" href="display.html">Švieslentė</a></li>
+      <li class="nav__link"><a class="nav__info" href="specialist.html">Specialistas</a></li>
+      <li class="nav__link nav__link--active"><a class="nav__info" href="client.html">Lankytojas</a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <section class="section">
+
+      <div class="client__info">
+        <p>Koks jūsų lankytojo numeris?</p>
+        <select class="client__number"></select>
+        <div class="client__waiting">
+          <p class="client__text hidden">Jums liko laukti apie</p>
+          <p class="client__time"></p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+<script src="js/client.min.js"></script>
+
+</html>
